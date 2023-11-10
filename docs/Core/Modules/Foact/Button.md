@@ -12,7 +12,7 @@
 | block    | boolean                              | yes      | Makes the buttons width fit its parents width        |
 | danger   | boolean                              | yes      | Makes the button "warning" red                       |
 
-[List of Icons](https://ant.design/components/icon)<p>
+[List of Icons](https://ant.design/components/icon)<p/>
 [You can see more properties here.](https://ant.design/components/button)
 
 ### Children
@@ -29,38 +29,38 @@ local btn = myUi:createElement("Button", {
     end
 })
 ```
-This is how the example looks in-game:<p>
-![Showcase](https://i.imgur.com/snLSITG.png)<p>
+This is how the example looks in-game:<p/>
+![Showcase](https://i.imgur.com/snLSITG.png)<p/>
 Its `icon` property is overwritten because `ghost` is active. 
 
 #### Type
-There are `primary` button, `default` button, `dashed` button, `text` button and `link` button in antd.<p>
+There are `primary` button, `default` button, `dashed` button, `text` button and `link` button in antd.<p/>
 ![Showcase](https://i.imgur.com/iPe31xt.png)
 
 #### Icon
-Buttons can contain an icon.<p>
+Buttons can contain an icon.<p/>
 ![Showcase](https://i.imgur.com/BN9icIX.png)
 
 #### Size
-Buttons can have different sizes. `default`, `large` or `small`.<p>
+Buttons can have different sizes. `default`, `large` or `small`.<p/>
 ![Showcase](https://i.imgur.com/hxpaaxB.gif)
 
 #### Disabled
-Buttons can be disabled, so the user is unable to press the button.<p>
+Buttons can be disabled, so the user is unable to press the button.<p/>
 ![Showcase](https://i.imgur.com/fElyYMz.png)
 
 #### Loading
-A loading indicator can be added to a button. Also makes the user unable to press the button.<p>
+A loading indicator can be added to a button. Also makes the user unable to press the button.<p/>
 ![Showcase](https://i.imgur.com/pyhpOXt.gif)
 
 #### Ghost
-Ghost property will make button's background transparent.<p>
+Ghost property will make button's background transparent.<p/>
 ![Showcase](https://i.imgur.com/JHcxmQN.png)
 
 #### Blocks
-Will make the button fit to its parent width.<p>
+Will make the button fit to its parent width.<p/>
 ![Showcase](https://i.imgur.com/RanDn7v.png)
 
 #### Danger
-Makes the button "warning" red.<p>
+Makes the button "warning" red.<p/>
 ![Showcase](https://i.imgur.com/oFAcolG.png)
