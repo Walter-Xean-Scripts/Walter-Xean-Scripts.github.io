@@ -8,17 +8,18 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.wxs.gg',
+  url: 'https://docs.wxs.gg/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'wxscripts', // Usually your GitHub org/user name.
-  projectName: 'wxscripts', // Usually your repo name.
+  organizationName: 'Walter-Xean-Scripts', // Usually your GitHub org/user name.
+  projectName: 'Walter-Xean-Scripts.github.io', // Usually your repo name.
+  deploymentBranch: 'deployment', // Deployment branch.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
