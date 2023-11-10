@@ -31,7 +31,7 @@ local btn = myUi:createElement("Button", {
 ```
 This is how the example looks in-game:<p>
 ![Showcase](https://i.imgur.com/snLSITG.png)<p>
-Its `icon` property is overwritten because `ghost` is active.
+Its `icon` property is overwritten because `ghost` is active. 
 
 #### Type
 There are `primary` button, `default` button, `dashed` button, `text` button and `link` button in antd.<p>
