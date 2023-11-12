@@ -1,10 +1,11 @@
 ### Properties
-| Property          | Type                                 | Optional | Description                        |
-|-                  |-                                     |-         |-                                   |
-| direction         | `horizontal`, `vertical`             | yes      | Direction of the spacing           |
-| size              | `small`, `middle`, `large`, number   | yes      | Amount of spacing between elements |
-| align             | `center`, `start`, `end`, `baseline` | yes      | Alignment of elements              |
-| wrap              | boolean                              | yes      | Auto wrap line                     |
+| Property          | Type                                 | Description                        |
+|-                  |-                                     |-                                   |
+| direction         | `horizontal`, `vertical`             | Direction of the spacing           |
+| size              | `small`, `middle`, `large`, number   | Amount of spacing between elements |
+| align             | `center`, `start`, `end`, `baseline` | Alignment of elements              |
+| wrap              | boolean                              | Auto wrap line                     |
+All properties are optional.
 
 ### Children
 Can have children.

@@ -1,19 +1,21 @@
 ### Properties
-| Property         | Type                                       | Optional | Description                                     |
-|-                 |-                                           |-         |-                                                |
-| min              | number                                     | yes      | Sliders minimum value                           |
-| max              | number                                     | yes      | Sliders maximum value                           |
-| defaultValue     | number, array                              | yes      | Sliders default value                           |
-| disabled         | boolean                                    | yes      | Weather slider is disabled for use              |
-| tooltipOpen      | boolean, nil                               | yes      | How the tooltip should be handled               |
-| tooltipPlacement | [See TooltipPlacement](#tooltipplacement)  | yes      | How the tooltip should be handled               |
-| step             | number                                     | yes      | How big `steps` the slider takes                |
-| vertical         | boolean                                    | yes      | Weather slider should be vertical               |
-| autoFocuss       | boolean                                    | yes      | When `true` slider will be focused when mounted |
-| keyboard         | boolean                                    | yes      | When `true` slider can be moved with keyboard   |
-| dots             | boolean                                    | yes      | "Whether the thumb can drag over tick only"     |
-| range            | boolean                                    | yes      | When `true` the slider has 2 thumbs             |
-| reverse          | boolean                                    | yes      | When `true` the slider is reversed              |
+| Property         | Type                                      | Description                                     |
+|-                 |-                                          |-                                                |
+| min              | number                                    | Sliders minimum value                           |
+| max              | number                                    | Sliders maximum value                           |
+| defaultValue     | number, array                             | Sliders default value                           |
+| disabled         | boolean                                   | Weather slider is disabled for use              |
+| tooltipOpen      | boolean, nil                              | How the tooltip should be handled               |
+| tooltipPlacement | [See TooltipPlacement](#tooltipplacement) | How the tooltip should be handled               |
+| step             | number                                    | How big `steps` the slider takes                |
+| vertical         | boolean                                   | Weather slider should be vertical               |
+| autoFocuss       | boolean                                   | When `true` slider will be focused when mounted |
+| keyboard         | boolean                                   | When `true` slider can be moved with keyboard   |
+| dots             | boolean                                   | "Whether the thumb can drag over tick only"     |
+| range            | boolean                                   | When `true` the slider has 2 thumbs             |
+| reverse          | boolean                                   | When `true` the slider is reversed              |
+All properties are optional.
+
 [Ant Design](https://ant.design/components/slider)
 
 ### Children
