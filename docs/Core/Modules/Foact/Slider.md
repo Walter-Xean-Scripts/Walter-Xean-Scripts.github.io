@@ -14,6 +14,8 @@
 | dots             | boolean                                   | "Whether the thumb can drag over tick only"     |
 | range            | boolean                                   | When `true` the slider has 2 thumbs             |
 | reverse          | boolean                                   | When `true` the slider is reversed              |
+| [events]         | function                                  | Please read the [events page](Events)           |
+
 All properties are optional.
 
 [Ant Design](https://ant.design/components/slider)

@@ -6,6 +6,7 @@
 | justify  | flex-start, center, flex-end, space-between, space-around, space-evenly | yes      | The alignment of the elements, x axis |
 | align    | flex-start, center, flex-end                                            | yes      | The alignment of the elements, y axis |
 | gap      | small, middle, large, string, number                                    | yes      | The gap between grips                 |
+| [events] | function                                                                | yes      | Please read the [events page](Events) |
 
 [Examples can be seen here](https://ant.design/components/flex)
 

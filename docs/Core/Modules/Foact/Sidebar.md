@@ -15,7 +15,7 @@ You only need to define `categoryId` and `icon` once per category, the rest will
 | items               | SidebarItem[]                | yes      | The items of the sidebar                             |
 | defaultSelectedKeys | string[]                     | yes      | The ids of the default selected menu items           |
 | defaultOpenKeys     | string[]                     | yes      | The ids of the default opened sub menus              |
-| onSidebarClick      | function                     | yes      | Called when a sidebar item is clicked                |
+| [events]            | function                     | yes      | Please read the [events page](Events)                |
 
 ### Children
 Not supported on a on sidebar item, use items property to set the items of the sidebar.

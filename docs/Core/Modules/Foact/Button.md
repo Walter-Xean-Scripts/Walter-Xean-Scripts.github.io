@@ -2,7 +2,6 @@
 | Property | Type                                 | Optional | Description                                          |
 |----------|--------------------------------------|----------|------------------------------------------------------|
 | text     | string                               | yes      | Text displayed on the button                         |
-| onClick  | function(string, number)             | yes      | Function event. Triggered when the button is pressed |
 | type     | primary, default, dashed, text, link | yes      | The type of button                                   |
 | icon     | string                               | yes      | The Icon of the button                               |
 | size     | default, large, small                | yes      | Size of the button                                   |
@@ -11,6 +10,7 @@
 | ghost    | boolean                              | yes      | Makes the buttons background transparent             |
 | block    | boolean                              | yes      | Makes the buttons width fit its parents width        |
 | danger   | boolean                              | yes      | Makes the button "warning" red                       |
+| [events] | function                             | yes      | Please read the [events page](Events)                | 
 
 [List of Icons](https://ant.design/components/icon)<p/>
 [You can see more properties here.](https://ant.design/components/button)
@@ -24,7 +24,7 @@ local btn = myUi:createElement("Button", {
     text = "Hello, World!",
     icon = "CaretRightOutlined",
     loading = true,
-    onClick = function(uiName, elementId)
+    onClick = function(uiName, elementId, event)
         print("Hello, World! Button was Clicked")
     end
 })

@@ -7,6 +7,7 @@
 | orientationMargin | number                       | yes      | The margin between the title and its closest border  |
 | plain             | boolean                      | yes      | Weather text is shown as plain text                  |
 | type              | string: horizontal, vertical | yes      | The direction of the divider                         |
+| [events]          | function                     | yes      | Please read the [events page](Events)                |
 
 [Examples can be seen here](https://ant.design/components/divider)
 
