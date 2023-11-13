@@ -2,6 +2,7 @@ The dialogue module, a completely **free** way to talk to NPCs!
 Not only that, but it's also made entirely in [Foact](../Foact), as a way to test out the module and see what was missing.
 
 ### List of functionality
+- [ResetConversation](ResetConversation)
 - [SetOptions](SetOptions)
 - [AddAnswer](AddAnswer)
 - [Start](Start)
