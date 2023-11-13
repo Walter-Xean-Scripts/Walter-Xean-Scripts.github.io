@@ -41,7 +41,15 @@ We'll cover it more in detail on this page.
 Below's a list of currently supported elements in Foact. These are made from [Ant Design's components](https://ant.design/components/overview/), and are therefore pre-styled if you don't override it.
 - [Box](Elements/Box)
 - [Button](Elements/Button)
+- [Divider](Elements/Divider)
+- [Dropdown](Elements/Dropdown)
+- [Flex](Elements/Flex)
+- [Paragraph](Elements/Paragraph)
+- [Sidebar](Elements/Sidebar)
 - [Slider](Elements/Slider)
+- [Space](Elements/Space)
+- [Text](Elements/Text)
+- [Title](Elements/Title)
 
 Are we missing something from Ant Design you want added? Let us know on Discord!
 
