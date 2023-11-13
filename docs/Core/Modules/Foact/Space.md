@@ -1,10 +1,12 @@
 ### Properties
-| Property          | Type                                 | Description                        |
-|-                  |-                                     |-                                   |
-| direction         | `horizontal`, `vertical`             | Direction of the spacing           |
-| size              | `small`, `middle`, `large`, number   | Amount of spacing between elements |
-| align             | `center`, `start`, `end`, `baseline` | Alignment of elements              |
-| wrap              | boolean                              | Auto wrap line                     |
+| Property          | Type                                 | Description                           |
+|-                  |-                                     |-                                      |
+| direction         | `horizontal`, `vertical`             | Direction of the spacing              |
+| size              | `small`, `middle`, `large`, number   | Amount of spacing between elements    |
+| align             | `center`, `start`, `end`, `baseline` | Alignment of elements                 |
+| wrap              | boolean                              | Auto wrap line                        |
+| [events]          | function                             | Please read the [events page](Events) |
+
 All properties are optional.
 
 ### Children

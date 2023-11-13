@@ -53,6 +53,9 @@ Below's a list of currently supported elements in Foact. These are made from [An
 
 Are we missing something from Ant Design you want added? Let us know on Discord!
 
+## How to handle events
+I decided to make a seperate page for this, so I can keep it updated as we add more functionality, check it out here [Events](Events). Most events from React and Ant Design *should* work, but there's some gotchas, so make sure to read the page.
+
 ## Creating a new UI
 To create a new UI, you'll need to call `Foact.new`, and pass it the name of the UI you want to create.
 We use this name to identify the UI, so it's important that it's unique to your ui. 

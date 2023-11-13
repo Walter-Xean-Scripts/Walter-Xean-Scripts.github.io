@@ -9,6 +9,8 @@
 | italic         | boolean           | yes      |
 | type           | string            | yes      |
 | underline      | boolean           | yes      |
+| [events]       | function          | yes      |
+Please read the [events page](Events)
 
 #### Copyable
 | Property       | Type              | Optional | Description               |
