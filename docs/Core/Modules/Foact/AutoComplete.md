@@ -1,7 +1,7 @@
 ### Properties
 | Property                | Type                    | Optional | Description                                           |
 |-                        |-                        |-         |-                                                      |
-| options                 | {label, value}[]        | No       | Options to select from in the autocomplete            |
+| options                 | table                   | No       | Options to select from in the autocomplete            |
 | defaultValue            | string                  | Yes      | Initial selected option                               |
 | placeholder             | string                  | Yes      | Placeholder of the input                              |
 | allowClear              | boolean                 | Yes      | Weather to show clear button                          |
