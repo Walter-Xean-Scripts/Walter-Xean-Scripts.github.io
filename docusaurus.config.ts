@@ -61,6 +61,10 @@ const config: Config = {
           label: 'Documentation',
         },
         {
+          label: "Our GitHub",
+          href: "https://github.com/Walter-Xean-Scripts/"
+        },
+        {
           label: 'Our Store',
           href: 'https://store.wxs.gg',
         },
