@@ -59,7 +59,7 @@ Weather the checkbox is disabled.<p/>
 ![Disabled Checkbox](https://i.imgur.com/0BOER2D.png)
 
 #### Indeterminate
-"The indeterminate checked state of checkbox"<p>
+"The indeterminate checked state of checkbox"<p/>
 ???
 
 #### OnChange
