@@ -41,7 +41,7 @@ When `true` the checkbox is focused when shown to the user.
 #### Checked
 Weather the checkbox is checked.<p/>
 Note when set, you will have to overwrite the `onChange` functionality otherwise the checkbox
-will stay checked or unchecked.<p>
+will stay checked or unchecked.<p/>
 ```lua
 onChange = function(id, name, event)
     local target = event.target
@@ -59,7 +59,7 @@ Weather the checkbox is disabled.<p/>
 ![Disabled Checkbox](https://i.imgur.com/0BOER2D.png)
 
 #### Indeterminate
-"The indeterminate checked state of checkbox"<p>
+"The indeterminate checked state of checkbox"<p/>
 ???
 
 #### OnChange
