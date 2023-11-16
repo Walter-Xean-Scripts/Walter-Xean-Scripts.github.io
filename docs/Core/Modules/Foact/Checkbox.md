@@ -17,7 +17,7 @@ Checkbox does not support children.
 
 ### Example
 ```lua
-local checkbox = AM:createElement("Checkbox", {
+local checkbox = myUI:createElement("Checkbox", {
     text = "Awesome",
     defaultChecked = true,
     onChange = function(id, name, event)
@@ -85,21 +85,21 @@ local optionsWithDisabled = {
     { label= 'Orange', value= '_orange', disabled = false },
 }
 
-local checkbox1 = AM:createElement("Checkbox", {
+local checkbox1 = myUI:createElement("Checkbox", {
     isGroup = true,
     options = plainOptions,
     onChange = function(id, name, checkedValues)
         print("Checked Values: ", json.encode(checkedValues))
     end,
 })
-local checkbox2 = AM:createElement("Checkbox", {
+local checkbox2 = myUI:createElement("Checkbox", {
     isGroup = true,
     options = options,
     onChange = function(id, name, checkedValues)
         print("Checked Values: ", json.encode(checkedValues))
     end,
 })
-local checkbox3 = AM:createElement("Checkbox", {
+local checkbox3 = myUI:createElement("Checkbox", {
     isGroup = true,
     options = optionsWithDisabled,
     defaultValue = {"Apple", "Orange"},
