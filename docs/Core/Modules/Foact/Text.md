@@ -10,7 +10,7 @@
 | strong         | boolean                                     | Weather the text is __strong__               |
 | italic         | boolean                                     | Weather the text is _italic_                 |
 | type           | `secondary`, `success`, `warning`, `danger` | Changes how text is displayed                |
-| underline      | boolean                                     | Weather the text is <u>underlined<u/>        |
+| underline      | boolean                                     | Weather the text is <u>underlined</u>        |
 | onClick        | function(event)                             | Fired when text is clicked                   |
 | copyable       | boolean|table                               | [See Copyable](#copyable)                    |
 | editable       | boolean|table                               | [See Editable](#editable)                    |
