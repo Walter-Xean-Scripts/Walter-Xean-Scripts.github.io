@@ -1,18 +1,23 @@
 ### Properties
-| Property             | Optional | Type                           | Description                                 |
-|-                     | -        |-                               |-                                            |
-| items                | No       | [See Menu Props](#menu-props)  | The menu props                              |
-| placement            | Yes      | [See Placement](#placement)    | Sets the placement of the popup menu        |
-| autoFocus            | Yes      | boolean                        | Focus dropdown when overlay is opened       |
-| disabled             | Yes      | boolean                        | Weather the dropdown menu is disabled       |
-| trigger              | Yes      | `contextMenu` `click` `hover`  | How the dropdown is opened                  |
-| type                 | Yes      | `button`                       | Sets the type of dropdown                   |
-| selectable           | Yes      | boolean                        | Sets weather the children are selectable    |
-| multiple             | Yes      | boolean                        | When true multiple children can be selected |
-| defaultSelectedKeys  | Yes      | string[]                       | Default selected keys                       |
-| triggerSubMenuAction | Yes      | `click` `hover`                | How sub-menues are opened                   |
-| onOpenChange         | Yes      | function(id, name, open, info) | [Function Event](#onopenchange)             |
-| menuEvents           | Yes      | function[]                     | Object containing `child`function events    |
+| Property             | Optional | Type                           | Description                                     |
+|-                     | -        |-                               |-                                                |
+| items                | No       | [See Menu Props](#menu-props)  | The menu props                                  |
+| placement            | Yes      | [See Placement](#placement)    | Sets the placement of the popup menu            |
+| autoFocus            | Yes      | boolean                        | Focus dropdown when overlay is opened           |
+| disabled             | Yes      | boolean                        | Weather the dropdown menu is disabled           |
+| trigger              | Yes      | `contextMenu` `click` `hover`  | How the dropdown is opened                      |
+| type                 | Yes      | `button`                       | Sets the type of dropdown                       |
+| open                 | Yes      | boolean                        | Set the dropdown open/close                     |
+| arrow                | Yes      | boolean or table               | Weather the dropdown arrow should be visible    |
+| selectable           | Yes      | boolean                        | Sets weather the children are selectable        |
+| multiple             | Yes      | boolean                        | When true multiple children can be selected     |
+| defaultSelectedKeys  | Yes      | string[]                       | Default selected keys                           |
+| triggerSubMenuAction | Yes      | `click` `hover`                | How sub-menues are opened                       |
+| onOpenChange         | Yes      | function(id, name, open, info) | [Function Event](#onopenchange)                 |
+| menuEvents           | Yes      | function[]                     | Object containing `child`function events        |
+| icon                 | Yes      | string                         | Icon displayed, only for type = button          |
+
+[See more properties here](https://ant.design/components/dropdown#api).
 
 ### Menu Props
 | Property  | Type      | Optional | Description                                          |
@@ -61,26 +66,31 @@ local items = {
     }
 }
 
-local dropdown = myUI:createElement("Dropdown", {
+myUi:createElement("Dropdown", {
     width = "100px",
     height = "40px",
     text = "Open Dropdown",
     items = items,
-    onClick = function(id, name, key)
-        print("onClick: ", id, name, key)
+    onOpenChange = function (_, _, open, info)
+        print("onOpenChange: ", open, "info: ", json.encode(info))
     end,
-    onSelect = function(id, name, key, selectedKeys)
-        print("onSelect: ", id, name, key, selectedKeys)
+    onClick = function(_, _, event)
+        print("onClick: ", json.encode(event))
     end,
-    onDeselect = function(id, name, key, selectedKeys)
-        print("onDeselect: ", id, name, key, selectedKeys)
-    end,
-    onOpenChange = function(id, name, open, info)
-        print("onOpenChange: ", id, name, open, info)
-    end,
-    onSubMenuOpenChange = function(id, name, openKeys)
-        print("onSubMenuOpenChange: ", id, name, openKeys)
-    end,
+    menuEvents = {
+        onClick = function(_, _, event)
+            print("menuEvents -> onClick: ", json.encode(event))
+        end,
+        onSelect = function(_, _, event)
+            print("menuEvents -> onSelect: ", json.encode(event))
+        end,
+        onDeselect = function(_, _, event)
+            print("menuEvents -> onDeselect: ", json.encode(event))
+        end,
+        onOpenChange = function(_, _, openKeys)
+            print("menuEvents -> onOpenChange: Open Keys:", json.encode(openKeys))
+        end,
+    }
 })
 ```
 This is how it looks:<p/>
@@ -105,6 +115,17 @@ When `click` the dropdown can only be opened when clicked.<p/>
 #### Type
 When `button` the dropdown will look different.. Pretty much it, least for now.<p/>
 ![Type](https://i.imgur.com/x6M8c8J.png)
+
+#### open
+Sets the dropdown to open/closed.<p/>
+When set, the default functionality of the opening/closing of the dropdown is overwritted.<p/>
+So you'll have to create that yourself in lua.
+
+#### arrow
+Default is `false/undefined`.<p/>
+![1](https://i.imgur.com/4A8Gvdi.png)<p/>
+![2](https://i.imgur.com/mOirsbP.png)<p/>
+![3](https://i.imgur.com/j3uv2hV.png)
 
 #### Selectable / Multiple
 When `true` the user can now select multiple items at once.<p/>

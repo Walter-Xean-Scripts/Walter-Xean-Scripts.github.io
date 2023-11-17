@@ -1,21 +1,28 @@
 ### SidebarItem
-| Property            | Type                         | Optional | Description                                          |
-|-                    |-                             |-         |-                                                     |
-| id                  | string                       | no       | The id of the sidebar item                           |
-| name                | string                       | no       | The name of the sidebar item                         |
-| category            | string                       | no      | The category name of the sidebar item                 |
-| categoryId          | string                       | yes      | The id of the category of the sidebar item           |
-| icon                | string                       | yes      | The icon of the sidebar category                     |
+| Property     | Type    | Optional | Description                                 |
+|-             |-        |-         |-                                            |
+| id           | string  | No       | The id of the sidebar item                  |
+| name         | string  | No       | The name of the sidebar item                |
+| category     | string  | No       | The category name of the sidebar item       |
+| categoryId   | string  | Yes      | The id of the category of the sidebar item  |
+| icon         | string  | Yes      | The icon of the sidebar category            |
 
 You only need to define `categoryId` and `icon` once per category, the rest will get the data from their `category` property. Examples further down the page.
 
 ### Properties
-| Property            | Type                         | Optional | Description                                          |
-|-                    |-                             |-         |-                                                     |
-| items               | SidebarItem[]                | yes      | The items of the sidebar                             |
-| defaultSelectedKeys | string[]                     | yes      | The ids of the default selected menu items           |
-| defaultOpenKeys     | string[]                     | yes      | The ids of the default opened sub menus              |
-| [events]            | function                     | yes      | Please read the [events page](Events)                |
+| Property            | Type                 | Description                                          |
+|-                    |-                     |-                                                     |
+| items               | SidebarItem[]        | The items of the sidebar                             |
+| defaultSelectedKeys | string[]             | The ids of the default selected menu items           |
+| defaultOpenKeys     | string[]             | The ids of the default opened sub menus              |
+| onClick             | function(event)      | Fired when menu item is clicked                      |
+| onSelect            | function(event)      | Fired when menu item is selected                     |
+| onDeselect          | function(event)      | Fired when menu item is deselected                   |
+| onOpenChange        | function(openKeys)   | Fired when sub-menus are opened/closed               |
+| [events]            | function             | Please read the [events page](Events)                |
+
+All properties are optional.<p/>
+[See More Properties Here](https://ant.design/components/menu)
 
 ### Children
 Not supported on a on sidebar item, use items property to set the items of the sidebar.
@@ -61,16 +68,25 @@ local Pages = {
     },
 }
 
-local Sidebar = Menu:createElement("Sidebar", {
+AM:createElement("Sidebar", {
     height = "700px",
     width = "200px",
     defaultOpenKeys = { "overview" },
     items = Pages,
-    onSidebarClick = function(_, _, sId)
-        if pagesById[sId] then
-            pagesById[sId]()
-        end
-    end
+    onClick = function(_, _, event)
+        local key = event.key
+        local keyPath = event.keyPath
+        print("onClick: Key: ", key, json.encode(event))
+    end,
+    onOpenChange = function(_, _, openKeys)
+        print("onOpenChange: OpenKeys: ", json.encode(openKeys))
+    end,
+    onSelect = function (_, _, event)
+        print("onSelect: ", json.encode(event))
+    end,
+    onDeselect = function (_, _, event)
+        print("onDeselect: ", json.encode(event))
+    end,
 })
 ```
 This is an example of how it could look in-game:<p/>

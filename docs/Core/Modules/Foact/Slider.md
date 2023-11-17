@@ -18,7 +18,7 @@
 
 All properties are optional.
 
-[Ant Design](https://ant.design/components/slider)
+[See more properties here](https://ant.design/components/slider)
 
 ### Children
 Not supported on slider.

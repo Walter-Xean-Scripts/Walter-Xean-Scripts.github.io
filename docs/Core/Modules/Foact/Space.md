@@ -5,6 +5,7 @@
 | size              | `small`, `middle`, `large`, number   | Amount of spacing between elements    |
 | align             | `center`, `start`, `end`, `baseline` | Alignment of elements                 |
 | wrap              | boolean                              | Auto wrap line                        |
+| block             | boolean                              | Weather to fit width to parent width  |
 | [events]          | function                             | Please read the [events page](Events) |
 
 All properties are optional.

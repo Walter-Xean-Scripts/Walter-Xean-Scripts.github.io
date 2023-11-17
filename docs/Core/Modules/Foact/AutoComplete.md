@@ -20,6 +20,8 @@
 | onSelect                | function(value, option) | Yes      | Called when a option is clicked                       |
 | onClear                 | function()              | Yes      | Called when clear button is clicked                   |
 
+[See more properties here](https://ant.design/components/auto-complete).
+
 ### Children
 AutoComplete does not support children.
 

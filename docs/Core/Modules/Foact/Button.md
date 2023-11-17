@@ -10,10 +10,11 @@
 | ghost    | boolean                              | yes      | Makes the buttons background transparent             |
 | block    | boolean                              | yes      | Makes the buttons width fit its parents width        |
 | danger   | boolean                              | yes      | Makes the button "warning" red                       |
+| shape    | `default`, `circle`, `round`         | yes      | Shape of the button                                  |
 | [events] | function                             | yes      | Please read the [events page](Events)                | 
 
-[List of Icons](https://ant.design/components/icon)<p/>
-[You can see more properties here.](https://ant.design/components/button)
+[List of Icons](https://ant.design/components/icon).<p/>
+[You can see more properties here](https://ant.design/components/button#api).
 
 ### Children
 Not supported on button - use the `text` property for setting the text of the button.
@@ -35,7 +36,8 @@ Its `icon` property is overwritten because `ghost` is active.
 
 #### Type
 There are `primary` button, `default` button, `dashed` button, `text` button and `link` button in antd.<p/>
-![Showcase](https://i.imgur.com/iPe31xt.png)
+![Showcase](https://i.imgur.com/iPe31xt.png)<p/>
+[List of Icons](https://ant.design/components/icon).
 
 #### Icon
 Buttons can contain an icon.<p/>

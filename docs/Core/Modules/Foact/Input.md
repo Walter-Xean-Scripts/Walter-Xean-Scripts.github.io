@@ -31,6 +31,8 @@
 | loading     | boolean                        | Weather the input is loading                    |
 | onSearch    | function(value, event, source) | Fired when the `button` is clicked              |
 
+[See more properties here](https://ant.design/components/input).
+
 ### Children
 Input does not support children.
 

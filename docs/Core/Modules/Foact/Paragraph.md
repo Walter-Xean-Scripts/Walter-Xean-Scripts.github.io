@@ -12,6 +12,8 @@
 | [events]       | function          | yes      |
 ^ Please read the [events page](Events)
 
+[Typography.Paragraph](Typography.Paragraph)
+
 #### Copyable
 | Property       | Type              | Optional | Description               |
 |----------------|-------------------|----------|---------------------------|

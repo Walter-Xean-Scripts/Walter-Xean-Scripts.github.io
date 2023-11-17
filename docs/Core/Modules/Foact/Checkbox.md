@@ -12,6 +12,8 @@
 | options        | table           | Yes      | [See IsGroup](#isgroup)                        |
 | defaultValue   | string|number[] | Yes      | [See IsGroup](#isgroup)                        |
 
+[See more properties here](https://ant.design/components/checkbox).
+
 ### Children
 Checkbox does not support children.
 

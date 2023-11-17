@@ -12,6 +12,8 @@
 | [events]       | function          | yes      |
 Please read the [events page](Events)
 
+[Typography.Title](https://ant.design/components/typography#typographytitle)
+
 #### Copyable
 | Property       | Type              | Optional | Description               |
 |----------------|-------------------|----------|---------------------------|
