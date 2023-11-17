@@ -1,0 +1,2 @@
+I'm not going to write docs on this before I get to a version I like.  
+If you want to check it out and maybe contribute to this part of the framework, the code is here: https://github.com/Walter-Xean-Scripts/wxs_framework/blob/main/server/player/subclasses/inventory.lua
