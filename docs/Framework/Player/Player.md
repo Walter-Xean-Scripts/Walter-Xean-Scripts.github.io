@@ -22,7 +22,7 @@ local WXPlayer = exports.wxs_framework:GetPlayerByCharacterId(characterId)
 ## Import
 If you want to, you can import the main script from imports and use it instead. The functionallity is as follows.
 
-### Add it to your shared scripts
+### Add it to your shared scripts if you haven't already
 ```lua
 shared_scripts {
     "@wxs_core/main.lua",
