@@ -9,8 +9,8 @@
 | indeterminate  | boolean         | Yes      | "The indeterminate checked state of checkbox"  |
 | onChange       | function(event) | Yes      | Fires when the user changes the checkbox       |
 | isGroup        | boolean         | Yes      | [See IsGroup](#isgroup)                        |
-| options        | table           | Yes      | [See IsGroup](#isgroup)                        |
-| defaultValue   | string|number[] | Yes      | [See IsGroup](#isgroup)                        |
+| options        | table           | Yes      | [See IsGroup](#options-properties)             |
+| defaultValue   | string|number[] | Yes      | -                                              |
 
 [See more properties here](https://ant.design/components/checkbox).
 
