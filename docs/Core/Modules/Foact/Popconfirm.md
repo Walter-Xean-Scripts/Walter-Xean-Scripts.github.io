@@ -160,5 +160,5 @@ local controller; controller = AM:createElement("Button", {
     end,
 })
 ```
-In this example the button within popconfirm does not open it, but the controller button does instead.<p>
+In this example the button within popconfirm does not open it, but the controller button does instead.<p/>
 ![Example](https://i.imgur.com/sIAN6WO.gif)
