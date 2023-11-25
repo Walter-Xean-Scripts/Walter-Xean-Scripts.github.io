@@ -1,18 +1,18 @@
 ### Properties
-| Property | Type                                 | Optional | Description                                          |
-|----------|--------------------------------------|----------|------------------------------------------------------|
-| text     | string                               | yes      | Text displayed on the button                         |
-| type     | primary, default, dashed, text, link | yes      | The type of button                                   |
-| icon     | string                               | yes      | The Icon of the button                               |
-| size     | default, large, small                | yes      | Size of the button                                   |
-| disabled | boolean                              | yes      | Weather the button is disabled                       |
-| loading  | boolean                              | yes      | Loading indicator for the button                     |
-| ghost    | boolean                              | yes      | Makes the buttons background transparent             |
-| block    | boolean                              | yes      | Makes the buttons width fit its parents width        |
-| danger   | boolean                              | yes      | Makes the button "warning" red                       |
-| shape    | `default`, `circle`, `round`         | yes      | Shape of the button                                  |
-| [events] | function                             | yes      | Please read the [events page](Events)                | 
-
+| Property     | Type                                 | Description                                          |
+|--------------|--------------------------------------|------------------------------------------------------|
+| text         | string                               | Text displayed on the button                         |
+| type         | primary, default, dashed, text, link | The type of button                                   |
+| icon         | string                               | The Icon of the button                               |
+| size         | default, large, small                | Size of the button                                   |
+| disabled     | boolean                              | Weather the button is disabled                       |
+| loading      | boolean                              | Loading indicator for the button                     |
+| ghost        | boolean                              | Makes the buttons background transparent             |
+| block        | boolean                              | Makes the buttons width fit its parents width        |
+| danger       | boolean                              | Makes the button "warning" red                       |
+| shape        | `default`, `circle`, `round`         | Shape of the button                                  |
+| customButton | boolean                              | When true, will be a button without any styling      |
+| [events]     | function                             | Please read the [events page](Events)                |
 [List of Icons](https://ant.design/components/icon).<p/>
 [You can see more properties here](https://ant.design/components/button#api).
 
@@ -66,3 +66,6 @@ Will make the button fit to its parent width.<p/>
 #### Danger
 Makes the button "warning" red.<p/>
 ![Showcase](https://i.imgur.com/oFAcolG.png)
+
+#### customButton
+When set to `true` the button will be a default HTML button without any styling.
