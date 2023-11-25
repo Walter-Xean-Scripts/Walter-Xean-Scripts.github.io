@@ -1,210 +1,187 @@
 ### Properties
-| Property             | Optional | Type                           | Description                                     |
-|-                     | -        |-                               |-                                                |
-| items                | No       | [See Menu Props](#menu-props)  | The menu props                                  |
-| placement            | Yes      | [See Placement](#placement)    | Sets the placement of the popup menu            |
-| autoFocus            | Yes      | boolean                        | Focus dropdown when overlay is opened           |
-| disabled             | Yes      | boolean                        | Weather the dropdown menu is disabled           |
-| trigger              | Yes      | `contextMenu` `click` `hover`  | How the dropdown is opened                      |
-| type                 | Yes      | `button`                       | Sets the type of dropdown                       |
-| open                 | Yes      | boolean                        | Set the dropdown open/close                     |
-| arrow                | Yes      | boolean or table               | Weather the dropdown arrow should be visible    |
-| selectable           | Yes      | boolean                        | Sets weather the children are selectable        |
-| multiple             | Yes      | boolean                        | When true multiple children can be selected     |
-| defaultSelectedKeys  | Yes      | string[]                       | Default selected keys                           |
-| triggerSubMenuAction | Yes      | `click` `hover`                | How sub-menues are opened                       |
-| onOpenChange         | Yes      | function(id, name, open, info) | [Function Event](#onopenchange)                 |
-| menuEvents           | Yes      | function[]                     | Object containing `child`function events        |
-| icon                 | Yes      | string                         | Icon displayed, only for type = button          |
+| Property       | Type                      | Description                                                   |
+|-               |-                          |-                                                              |
+| text           | string                    | Text displayed in the dropdown                                |
+| items          | table                     | Menu item content, [See Items](#items)                        |
+| type           | button, default           | Type of dropdown                                              |
+| buttonType     | string                    | Button-type of dropdown [See Button](Button.md)               |
+| buttonStyle    | table                     | CSS Properties of dropdown button                             |
+| buttonProps    | table                     | Properties of button. [See Button](Button.md)                 |
+| placement      | string                    | Placement of popup from dropdown. [See Placement](#placement) |
+| arrow          | boolean, table            | [See Arrow](#arrow)                                           |
+| trigger        | click, hover, contextMenu | How the dropdown is triggered                                 |
+| open           | boolean                   | Controls whether dropdown is opened                           |
+| autoFocus      | boolean                   | Whether dropdown will have focus                              |
+| disabled       | boolean                   | Whether dropdown is disabled                                  |
+| menu           | table                     | [See Menu](#menu)                                             |
 
-[See more properties here](https://ant.design/components/dropdown#api).
+#### Properties (type = button)
+| Property       | Type                  | Description                 |
+|-               |-                      |-                            |
+| loading        | boolean               | Whether dropdown is loading |
+| danger         | boolean               | Displays buttons as red     |
+| icon           | string                | Icon to open the dropdown   |
+| size           | small, middle, large  | Size of buttons             |
+| menuButtonType | string                | Type of button              |
+These properties are for when `type == "button"`
 
-### Menu Props
-| Property  | Type      | Optional | Description                                          |
-|-          |-          | -        |-                                                     |
-| key       | string    | No       | Unique ID of the item                                |
-| type      | `divider` | Yes      | When `true` the item is a divider                    |
-| children  | item[]    | Yes      | Sub-menus or sub-menu items                          |
-| danger    | boolean   | Yes      | Display item in danager style                        |
-| disabled  | boolean   | Yes      | Weather the item is disabled                         |
-| icon      | string    | Yes      | [Displayed Icon](https://ant.design/components/icon) |
-| label     | string    | Yes      | Label/Title of the item                              |
-| title     | string    | Yes      | "Set display title for collapsed item"               |
+[List of Icons](https://ant.design/components/icon?theme=dark#list-of-icons)<p/>
+[Ant Design Dropdown](https://ant.design/components/dropdown?theme=dark)<p/>
+[Ant Design Menu Properties](https://ant.design/components/menu?theme=dark)
 
-### Menu Events
-| Property     | Type                         | Description                            |
-|-             |-                             |-                                       |
-| onClick      | function(id, name, event)    | [Function Event](#onclick)             |
-| onSelect     | function(id, name, event)    | [Function Event](#onselect)            |
-| onDeselect   | function(id, name, event)    | [Function Event](#ondeselect)          |
-| onOpenChange | function(id, name, openKeys) | [Function Event](#onsubmenuopenchange) |
-All events are optional.
+### Children
+Dropdown does not support children.
 
 ### Example
 ```lua
 local items = {
     {
-        label = "First",
-        key = 'first',
+        label = "Xean Xeansen",
+        key = "1",
     },
     {
-        label = "Second",
-        key = 'second',
+        label = "Walter Waltersen",
+        key = "2",
     },
     {
-        type = 'divider',
+        type = "divider"
     },
     {
-        label = "Sub Menu",
-        key = "sub-menu",
+        label = "More -> Xean",
+        key = "more:xean",
         children = {
             {
-                label = "First (In Sub Menu)",
-                key = "3-1"
+                label = "Kick",
+                key = "xean:kick",
+            },
+            {
+                label = "Mute",
+                key = "xean:mute",
             }
         }
     }
 }
 
-myUi:createElement("Dropdown", {
-    width = "100px",
-    height = "40px",
-    text = "Open Dropdown",
+myUI:createElement("Dropdown", {
+    text = "Dropdown Text",
     items = items,
-    onOpenChange = function (_, _, open, info)
-        print("onOpenChange: ", open, "info: ", json.encode(info))
-    end,
     onClick = function(_, _, event)
-        print("onClick: ", json.encode(event))
+        print("Teleport To")
     end,
-    menuEvents = {
+    menu = {
+        selectable = true,
         onClick = function(_, _, event)
-            print("menuEvents -> onClick: ", json.encode(event))
+            local key = event.key;
+            local keyPath = event.keyPath;
+            print("menu -> onClick: Key: ", key)
+            --print("menu -> onClick: ", json.encode(event))
         end,
         onSelect = function(_, _, event)
-            print("menuEvents -> onSelect: ", json.encode(event))
+            local keyPath = event.keyPath;
+            local selectedKeys = event.selectedKeys
+            print("menu -> onSelect: ", json.encode({keyPath, selectedKeys}, {indent = true}))
+            --print("menu -> onSelect: ", json.encode(event))
         end,
         onDeselect = function(_, _, event)
-            print("menuEvents -> onDeselect: ", json.encode(event))
+            local keyPath = event.keyPath;
+            local selectedKeys = event.selectedKeys
+            print("menu -> onDeselect: ", json.encode({keyPath, selectedKeys}, {indent = true}))
+            --print("menu -> onDeselect: ", json.encode(event))
         end,
         onOpenChange = function(_, _, openKeys)
-            print("menuEvents -> onOpenChange: Open Keys:", json.encode(openKeys))
+            print("menu -> onOpenChange: ", json.encode(openKeys))
         end,
-    }
-})
+    },
+}),
 ```
 This is how it looks:<p/>
-![Showcase](https://i.imgur.com/rtCBndl.png)
+![image](https://i.imgur.com/JNOFXwB.png)
 
-#### Placement
-Can be any of the following:<p/>
-`topLeft` `topCenter` `topRight` `bottomLeft` `bottomCenter` `bottomRight` `top` `bottom`.<p/>
-Changes the placement of the dropdown.
+#### text
+The text displayed within the dropdown.
 
-#### Autofocus
-When `true` the dropdown will be focused when it opens.
+#### items
+Table containing the content of the dropdown.<p/>
+##### MenuItemType
+| Property | Description                          | Type           | Default |
+|-         |-                                     |-               |-        |
+| danger   | Display the danger style             | boolean        | false   |
+| disabled | Whether menu item is disabled        | boolean        | false   |
+| icon     | The icon of the menu item            | string         | -       |
+| key      | Unique ID of the menu item           | string         | -       |
+| label    | Menu label                           | string         | -       |
+| title    | Set display title for collapsed item | string         | -       |
+| children | Sub-menus                            | MenuItemType[] | -       |
 
-#### Disabled
-When `true` the user will not be able to open the dropdown.<p/>
-![Disabled](https://i.imgur.com/18QANDy.png)
+#### type
+The type of dropdown. Just changes how the "element itself" looks.<p/>
+In the below example the text "Teleport To" is a button, that will not open the dropdown:<p/>
+![image](https://i.imgur.com/g6TdvSp.png)
 
-#### Trigger
-When `hover` the dropdown will open once hovered by the mouse.<p/>
-When `click` the dropdown can only be opened when clicked.<p/>
+#### buttonType
+The type of button when `type = "default"`.<p/>
+Can be any of the following: `primary, default, dashed, text, link`.<p/>
+`buttonType = "link"`:<p/>
+![image](https://i.imgur.com/8mdUXhS.png)<p/>
+`buttonType = "text"`:<p/>
+![image](https://i.imgur.com/9sUXGZ8.png)
 
-#### Type
-When `button` the dropdown will look different.. Pretty much it, least for now.<p/>
-![Type](https://i.imgur.com/x6M8c8J.png)
+#### buttonStyle
+Styling of the button when `type = "default"`. You can see [more here (Button)](Button.md)
 
-#### open
-Sets the dropdown to open/closed.<p/>
-When set, the default functionality of the opening/closing of the dropdown is overwritted.<p/>
-So you'll have to create that yourself in lua.
+#### buttonProps
+Props of the button when `type = "default"`. You can see [more here (Button)](Button.md)<p/>
+Things like `onClick` etc.
+
+#### placement
+Placement of the popup for the dropdown, can be any of the following:<p/>
+`bottomLeft bottom bottomRight topLeft top topRigh`<p/>
+`placement = "top"`:<p/>
+![image](https://i.imgur.com/PcTnY6t.png)<p/>
 
 #### arrow
-Default is `false/undefined`.<p/>
-![1](https://i.imgur.com/4A8Gvdi.png)<p/>
-![2](https://i.imgur.com/mOirsbP.png)<p/>
-![3](https://i.imgur.com/j3uv2hV.png)
+Can be either a `boolean` or a table, like so `arrow = {pointAtCenter = boolean}`.<p/>
+When `true` a arrow will point towards the element that opened the dropdown.<p/>
+When `{pointAtCenter = true}` the arrow will point in the center of the element that opened the dropdown.
 
-#### Selectable / Multiple
-When `true` the user can now select multiple items at once.<p/>
-Assuming [multiple](#multiple) is also `true`. Otherwise will work like normal.<p/>
-![Showcase](https://i.imgur.com/MDTV9jY.png)<p/>
-In this example I have selected `Second` and `First (In Sub Menu)`.
+#### trigger
+How the dropdown is triggered.<p/>
+`click` means the user has to click to open the dropdown.<p/>
+`hover` means the user just have to hover to open the dropdown.<p/>
+`contextMenu` means the user has to right-click to open the dropdown.<p/>
 
-#### Default Selected Keys
-The default selected values.<p/>
-Example:
-```lua
-defaultSelectedKeys = {"second", "3-1"}
-```
-With this example `Second` and `First (In Sub Menu)` will be selected from the start.
+#### open
+Controls weather the dropdown is opened/closed.<p/>
+When you set this you'll have to handle the opening/closing of the dropdown yourself.
 
-#### Trigger Sub Menu Action
-```lua
-triggerSubMenuAction = "click"
--- or
-triggerSubMenuAction = "hover"
-```
-Sets how sub menues are opened, when `click` the sub menues have to be clicked to be opened.<p/>
-And when `hover` the sub menues will open once hovered.
+#### autoFocus
+Weather the dropdown should have focus when displayed to the user.
 
-#### OnOpenChange
-Event is triggered when the dropdown is opened or closed.
-```lua
-onOpenChange = function(id, name, open, info)
-    print("On Open Change: Open: " .. open .. " trigger:" .. info.source)
-    -- Once opened/closed will output: "On Open Change: Open: true|false trigger: trigger|menu"
-end
-```
-`info.source` is the `reason` the dropdown opened or closed.<p/>
-`info.source == trigger` means it was opened/closed by the user with a click or hover.<p/>
-`info.source == menu` means the dropdown opened/closed by the menus built-in functionality.
+#### disabled
+Weather the dropdown is disaplyed.<p/>
+![image](https://i.imgur.com/ZaTWZz8.png)
 
-### Menu Events
+#### menu
+Table containing properties for menu.
 
-#### OnClick
-```lua
-onClick = function(id, name, event)
-    local key = event.key
-    local keyPath = event.keyPath
-    print("onClick: Key: " .. key .. " was pressed.")
-    print("Key Path: " .. json.encode(keyPath)) -- encode because its an array.
-end
-```
-If I press `First` from the [Example](#example): `onClick: Key: first was pressed.` will be printed.
-
-#### OnSelect / OnDeselect
-When `selectable` is true, this event along with `onClick` will be fired.<p/>
-You just get some more information with this event.
-```lua
-onSelect = function(id, name, event)
-    local key = event.key
-    local selectedKeys = event.selectedKeys -- array of strings
-    local keyPath = event.keyPath -- array of strings
-    print("onSelect: Key: " .. key .. " was selected")
-    print("Currently Selected Keys: " .. json.encode(selectedKeys))
-    print("Key Path: " .. json.encode(keyPath))
-end,
-onDeselect = function(id, name, event)
-    local key = event.key
-    local selectedKeys = event.selectedKeys -- array of strings
-    local keyPath = event.keyPath -- array of strings
-    print("onDeselect: Key: " .. key .. " was deselected.")
-    print("Currently Selected Keys: " .. json.encode(selectedKeys))
-    print("Key Path: " .. json.encode(keyPath))
-end
-```
-From [Example](#example):<p/>
-When `Second` is not already selected and pressed will output: `onSelect: Key: second was selected`.<p/>
-When `Second` is already selected and pressed will output: `onDeselect: Key: second was deselected`.
-
-#### OnOpenChange
-Event is triggered once a sub-menu is opened/closed.<p/>
-`openKeys` is a list of opened sub-menus.
-```lua
-onOpenChange = function(id, name, openKeys)
-    print("(From Sub Menu) onOpenChange: Open Keys: " .. json.encode(openKeys))
-end
-```
+##### Menu Properties
+| Property              | Description                                                 | Type                                                     |
+|-                      |-                                                            |-                                                         |
+| selectable            | Allows selecting menu items                                 | boolean                                                  |
+| multiple              | Allows selection of multiple items                          | boolean                                                  |
+| mode                  | Direction/Type of menu                                      | vertical horizontal inline                               |
+| defaultOpenKeys       | List of default opened keys. (For entries with children)    | string[]                                                 |
+| defaultSelectedKeys   | Table of default selected keys. (When selectable=true)      | string[]                                                 |
+| expandIcon            | Icon for menus containing sub-menus                         | string                                                   |
+| forceSubMenuRender    | "Render submenu into DOM before it becomes visible"         | boolean                                                  |
+| inlineCollapsed       | "Specifies the collapsed status when menu is inline mode"   | boolean                                                  |
+| inlineIndent          | "Indent (in pixels) of inline menu items on each level"     | number                                                   |
+| style                 | CSS Properties fors styling menu                            | table/CSSProperties                                      |
+| subMenuCloseDelay     | "Delay time to hide submenu when mouse leaves (in seconds)" | number                                                   |
+| subMenuOpenDelay      | "Delay time to show submenu when mouse enters (in seconds)" | number                                                   |
+| theme                 | Color theme of the menu                                     | light dark                                               |
+| triggerSubMenuAction  | "Which action can trigger submenu open/close"               | hover click                                              |
+| onClick               | Called when a menu item is clicked                          | function({ item, key, keyPath, domEvent })               |
+| onSelect              | Called when a menu item is selected                         | function({ item, key, keyPath, selectedKeys, domEvent }) |
+| onDeselect            | Called when a menu item is deselected (multiple mode only)  | function({ item, key, keyPath, selectedKeys, domEvent }) |
+| onOpenChange          | Called when sub-menus are opened or closed                  | function(openKeys: string[])                             |
