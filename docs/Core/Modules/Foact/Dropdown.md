@@ -185,3 +185,34 @@ Table containing properties for menu.
 | onSelect              | Called when a menu item is selected                         | function({ item, key, keyPath, selectedKeys, domEvent }) |
 | onDeselect            | Called when a menu item is deselected (multiple mode only)  | function({ item, key, keyPath, selectedKeys, domEvent }) |
 | onOpenChange          | Called when sub-menus are opened or closed                  | function(openKeys: string[])                             |
+
+##### onClick
+Event is fired when user clicks a sub-menu/item.
+```lua
+onClick = function(_, _, event)
+    local key = event.key;
+    local keyPath = event.keyPath;
+    print("menu -> onClick: Key: ", key)
+end
+```
+
+##### onSelect
+Event is fired when `selectable = true` and the user selects an item or sub-item.
+```lua
+onSelect = function(_, _, event)
+    local keyPath = event.keyPath;
+    local selectedKeys = event.selectedKeys
+    print("menu -> onSelect: ", json.encode({keyPath, selectedKeys}, {indent = true}))
+end
+```
+
+##### onDeselect
+Event is fired when `selectable = true` and the user deselects an item or sub-item.
+
+##### onOpenChange
+Event is fired when any sub-menu is opened or closed.
+```lua
+onOpenChange = function(_, _, openKeys)
+    print("menu -> onOpenChange: ", json.encode(openKeys))
+end
+```
