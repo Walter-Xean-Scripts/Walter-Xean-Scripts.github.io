@@ -181,10 +181,10 @@ Table containing properties for menu.
 | subMenuOpenDelay      | "Delay time to show submenu when mouse enters (in seconds)" | number                                                   |
 | theme                 | Color theme of the menu                                     | light dark                                               |
 | triggerSubMenuAction  | "Which action can trigger submenu open/close"               | hover click                                              |
-| onClick               | Called when a menu item is clicked                          | function({ item, key, keyPath, domEvent })               |
-| onSelect              | Called when a menu item is selected                         | function({ item, key, keyPath, selectedKeys, domEvent }) |
-| onDeselect            | Called when a menu item is deselected (multiple mode only)  | function({ item, key, keyPath, selectedKeys, domEvent }) |
-| onOpenChange          | Called when sub-menus are opened or closed                  | function(openKeys: string[])                             |
+| onClick               | Called when a menu item is clicked                          | function(event)                                          |
+| onSelect              | Called when a menu item is selected                         | function(event)                                          |
+| onDeselect            | Called when a menu item is deselected (multiple mode only)  | function(event)                                          |
+| onOpenChange          | Called when sub-menus are opened or closed                  | function(openKeys)                                       |
 
 ##### onClick
 Event is fired when user clicks a sub-menu/item.
