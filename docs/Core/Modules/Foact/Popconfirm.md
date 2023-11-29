@@ -4,7 +4,8 @@
 | title             | string          | Title of the popconfirm                       |
 | cancelText        | string          | Text displayed in the cancel option           |
 | okText            | string          | Text displayed in the ok option               |
-| description       | string          | Text displayed in popconfirm                  |
+| description       | string, string[]| Text displayed in popconfirm                  |
+| descriptionStyle  | table           | CSS Styling for the content of description    |
 | disabled          | boolean         | Weather the popconfirm should display         |
 | icon              | string          | Icon of the popover                           |
 | cancelButtonProps | table           | [See cancelButtonProps](#cancelbuttonprops)   |
@@ -51,6 +52,11 @@ AM:createElement("Popconfirm", {
 ```
 This is how it looks:<p/>
 ![In Game](https://i.imgur.com/aTniwGT.png)
+
+### description
+Can be either a `string` or an array containing multiple strings.<p/>
+`description = {"1", "2", "3"}` would look like:<p/>
+![image](https://i.imgur.com/8mDCFfd.png)
 
 #### disabled
 When `disabled = true` the popover will not be displayed when children is clicked/focused.
